@@ -1,6 +1,11 @@
 !!!
 html
   head
-    link(rel="stylesheet", href="/main.css")
+    script(type="text/javascript", src="//use.typekit.net/xzf1kdh.js")
+    script(type="text/javascript")
+      try{Typekit.load();}catch(e){}
+    link(rel="stylesheet", href="/normalize.css")
+    link(rel="stylesheet", href="/css/ionicons.min.css")
+    link(rel="stylesheet", href="/style.css")
   body
     != yield
