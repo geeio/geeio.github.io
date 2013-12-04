@@ -1,6 +1,6 @@
 .PHONY: deploy
 
 deploy:
-	sass style/main.sass public/style.css
+	bundle exec sass style/main.sass public/style.css
 	harp compile
-	s3_website push --site www
+	bundle exec s3_website push --site www

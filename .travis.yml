@@ -1,5 +1,7 @@
 language: ruby
-cache: bundler
+cache:
+  - bundler
+  - npm
 before_install: npm install -g harp
 script: make deploy
 env:
