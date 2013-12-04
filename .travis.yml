@@ -2,3 +2,7 @@ language: ruby
 cache: bundler
 before_install: npm install -g harp
 script: make deploy
+env:
+  global:
+  - secure: IwhNAgqOTgwgNCwo6B5GtsXW4qttV25OOygjQEN7tN3P10KFS+d7RYdDGUOL/AQKN4biZnb33S+IbgALU0Gi1QG2PD3A7BbGb3ChyvVr28jKkVZDZmL73bVH4oz5TcKUEPIVTCF1NvUcjw/GzXBikHBtLwXCpUQIFpTZf6bLGnw=
+  - secure: Msa/CFj7dcK/7+OcCs24FqHsrAX4psyigXSntcX8DoJG7/FfItHy7MAlhfRwVNfFhvNcPD8WQkH8jCMrQ+0jRteoKnmmTiIUc//d7ilN17hw/8Q26ANvX8w1k0XYC9z/Dmjas5IO5TTEYpJgE4rH4MGZkKS7e8cpfE60qWC/LpY=
