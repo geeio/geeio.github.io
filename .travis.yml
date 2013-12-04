@@ -1,7 +1,5 @@
 language: ruby
-cache:
-- bundler
-- npm
+install: "bin/wad"
 before_install: npm install -g harp
 script: make deploy
 deploy:
@@ -14,4 +12,9 @@ deploy:
   skip_cleanup: true
   local-dir: www
   on:
-    branch: master
+    tags: true
+env:
+  global:
+    secure: ZJC4UhHFRTZ7/XRM6gsZ75G/+uF4MNE/olffMoeNGcobBNAucJ9XqQZ6loYmAaEh/qbFTr1YKaDqUuUy4DlBOzU3ou7j4rKqzLwBpFNIg6lvrCF2D1Hc6RvjFG8CqZlgSzUY1teycs+Fnl7cn/mmfH7lM5xQeEgvk0Oqn97Qnyo=
+    - S3_BUCKET_NAME=bundler-cache-gee.io
+    - S3_REGION=us-east-1
