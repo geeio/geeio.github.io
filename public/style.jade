@@ -33,18 +33,18 @@ include _mixins/lorem
 
     header: h1 List Types
     article
-      h3 Definition List
+      h5 Definition List
       dl: +dl_list_items()
-      h3 Definition List Horizontal
+      h5 Definition List Horizontal
       dl.dl-h: +dl_list_items()
 
     article
-      b Ordered List
+      h5 Ordered List
       ol
         each val in [1, 2, 3]
           li= 'List Item ' + val
 
-      b Unordered List
+      h5 Unordered List
       ul
         each val in [1, 2, 3]
           li= 'List Item ' + val
