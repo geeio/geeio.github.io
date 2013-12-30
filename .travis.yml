@@ -10,5 +10,3 @@ deploy:
   bucket: gee.io
   skip_cleanup: true
   local-dir: www
-  on:
-    tags: true
