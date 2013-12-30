@@ -1,6 +1,5 @@
-language: ruby
-before_install: npm install -g harp
-script: make deploy
+language: node_js
+script: ./node_modules/.bin/harp compile
 deploy:
   provider: s3
   access_key_id:
