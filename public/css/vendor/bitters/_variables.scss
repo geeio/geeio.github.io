@@ -32,7 +32,7 @@ $header-font-color: darken($base-font-color, 10);
 $base-accent-color: #38dabb;
 
 //  Text Link Colors
-$base-link-color: $base-accent-color;
+$base-link-color: darken($base-accent-color, 10);
 $hover-link-color: darken($base-accent-color, 15);
 
 // Border color

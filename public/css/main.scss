@@ -23,3 +23,22 @@
 a.btn:hover {
   color: white;
 }
+
+#big-panel {
+  margin: 40px auto;
+  text-align: center;
+
+  h1 {
+    line-height: 0.9;
+    font-size: 80px;
+    font-weight: 900;
+  }
+
+  h2 {
+
+  }
+
+  h5 {
+    color: $medium-gray;
+  }
+}

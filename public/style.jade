@@ -31,6 +31,10 @@ include _mixins/lorem
       dt: +lorem(2, "words")
       dd: +lorem(10, "words")
 
+    mixin list_items
+      each val in [1, 2, 3]
+        li= 'List Item ' + val
+
     header: h1 List Types
     article
       h5 Definition List
@@ -40,14 +44,10 @@ include _mixins/lorem
 
     article
       h5 Ordered List
-      ol
-        each val in [1, 2, 3]
-          li= 'List Item ' + val
+      ol: +list_items()
 
       h5 Unordered List
-      ul
-        each val in [1, 2, 3]
-          li= 'List Item ' + val
+      ul: +list_items()
 
 
 
