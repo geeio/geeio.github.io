@@ -1,0 +1,42 @@
+header.page-header {
+  @include clearfix;
+  .logo {
+    float: left;
+    font-family: "bd-jupiter-stencil";
+    font-size: 40px;
+    padding: 10px 14px;
+    padding-bottom: 16px;
+    border-right: 1px solid $light-gray;
+    color: $base-accent-color;
+  }
+  border-bottom: 1px solid $light-gray;
+  a {
+    color: $dark-gray;
+  }
+  a.btn {
+    color: white;
+  }
+  .icon {
+    font-size: 20px;
+    padding: 15px 0;
+    margin-right: 5px;
+    line-height: 1em;
+  }
+  ul {
+    float: right;
+    @include list-inline;
+    li {
+      vertical-align: middle;
+    }
+  }
+}
+
+section > header {
+  border-bottom: 1px solid $light-gray;
+  margin: 10px 0;
+  padding-bottom: 5px;
+}
+
+section {
+  margin-bottom: 20px
+}

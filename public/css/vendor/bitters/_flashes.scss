@@ -1,50 +1,36 @@
-/* Success, error & notice boxes for messages and errors. */
+/* Modified */
 %flash {
   margin-bottom: $base-line-height / 2;
   padding: $base-line-height / 2;
-  font-weight: bold;
+  border-left: 3px solid #eee;
+}
+@mixin flash-color ($base-color) {
+  background: tint($base-color, 90%);
+  border-color: tint($base-color, 50%);
+  color: $base-font-color;
+
+  a {
+    color: darken($base-color, 40%);
+
+    &:hover {
+      color: darken($base-color, 50%);
+    }
+  }
 }
 
 .error, #flash_failure {
   @extend %flash;
-  background: $error-color;
-  color: darken($error-color, 60);
-
-  a {
-    color: darken($error-color, 70);
-
-    &:hover {
-      color: darken($error-color, 90);
-    }
-  }
+  @include flash-color($error-color);
 }
 
 .notice, #flash_notice {
   @extend %flash;
-  background: $notice-color;
-  color: darken($notice-color, 60);
-
-  a {
-    color: darken($notice-color, 70);
-
-    &:hover {
-      color: darken($notice-color, 90);
-    }
-  }
+  @include flash-color($notice-color);
 }
 
 
 .success, #flash_success {
   @extend %flash;
-  background: $success-color;
-  color: darken($success-color, 60);
-
-  a {
-    color: darken($success-color, 70);
-
-    &:hover {
-      color: darken($success-color, 90);
-    }
-  }
+  @include flash-color($success-color);
 }
 
