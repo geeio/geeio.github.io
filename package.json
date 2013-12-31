@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/geeio/gee.io",
   "dependencies": {
-    "harp": "~0.11.0"
+    "harp": "~0.11.0",
+    "feathers": "~0.2.0"
   }
 }
