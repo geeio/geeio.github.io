@@ -8,7 +8,7 @@
 
 @import "partials/gist";
 @import "partials/header";
-
+@import "partials/contact_form";
 
 .wrapper {
   margin: 0 40px
@@ -18,10 +18,13 @@
 .btn {
   @include button(#38dabb);
   line-height: 1em;
-  font-weight: bold;
 }
 a.btn:hover {
   color: white;
+}
+
+html {
+  height: 100%;
 }
 
 #big-panel {
@@ -29,23 +32,23 @@ a.btn:hover {
   text-align: center;
 
   h1 {
-    line-height: 0.9;
     font-size: 80px;
     font-weight: 900;
-  }
-
-  h2 {
-
   }
 
   h5 {
     color: $medium-gray;
   }
+
+  .btn {
+    margin-top: 30px;
+  }
 }
 
-.logo-big {
-  font-family: "bd-jupiter-stencil";
-  font-size: 1000px;
-  line-height: 1;
-  color: $base-accent-color;
+.page-title {
+  font-size: 30px;
+  font-weight: 200;
+  margin: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }

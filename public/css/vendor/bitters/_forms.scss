@@ -35,6 +35,11 @@ label {
   }
 }
 
+textarea {
+  resize: none;
+  height: 10em;
+}
+
 textarea,
 #{$all-text-inputs} {
   @include box-sizing(border-box);
@@ -45,8 +50,8 @@ textarea,
   box-shadow: $form-box-shadow;
   font-family: $form-font-family;
   font-size: $form-font-size;
-  margin-bottom: $base-line-height / 2;
-  padding: ($base-line-height / 3) ($base-line-height / 3);
+  margin-bottom: $base-line-height;
+  padding: ($base-line-height / 2) ($base-line-height / 2);
   width: 100%;
 
   &:hover {
