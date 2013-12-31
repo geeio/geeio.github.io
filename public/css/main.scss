@@ -8,6 +8,7 @@
 
 @import "partials/gist";
 @import "partials/header";
+@import "partials/footer";
 @import "partials/contact_form";
 
 .wrapper {
@@ -21,10 +22,6 @@
 }
 a.btn:hover {
   color: white;
-}
-
-html {
-  height: 100%;
 }
 
 #big-panel {
@@ -48,7 +45,8 @@ html {
 .page-title {
   font-size: 30px;
   font-weight: 200;
-  margin: 30px;
+  padding: 30px;
   text-align: center;
   text-transform: uppercase;
 }
+
