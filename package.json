@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "predeploy": "./node_modules/.bin/coffee -cb app/"
+    "predeploy": "./node_modules/.bin/coffee -cb app/",
+    "start": "app/index.js"
   },
   "repository": {
     "type": "git",
