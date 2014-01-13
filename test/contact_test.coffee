@@ -1,4 +1,9 @@
 req = require 'supertest'
+PostmarkMock = require './support/postmark_mock'
+
+
+
+
 
 describe 'Contact', ->
   describe 'create', ->
@@ -10,8 +15,12 @@ describe 'Contact', ->
       budget: '1000'
 
     it 'should send stuff', (done) ->
+      postmark = PostmarkMock.start()
+
       req(app)
         .post('/contact')
         .send(data())
         .expect('Content-Type', /json/)
-        .expect(200, done)
+        .expect 200, ->
+          postmark.done()
+          done()

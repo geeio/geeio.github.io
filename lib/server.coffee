@@ -14,7 +14,6 @@ class Contact
       css: __dirname + '/../public/email/ink.css'
       data: data
     , (e, s) ->
-      console.log arguments
       cb(null, params)
 
 

@@ -24,7 +24,8 @@
     "coffee-script": "~1.6.3",
     "postmark": "~0.2.0",
     "email-templates": "~0.1.1",
-    "trebuchet": "~1.1.0"
+    "trebuchet": "~1.1.0",
+    "rewire": "~2.0.0"
   },
   "subdomain": "gee",
   "engines": {
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "chai": "~1.8.1",
-    "supertest": "~0.8.2"
+    "supertest": "~0.8.2",
+    "nock": "~0.27.1"
   }
 }
