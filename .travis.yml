@@ -1,11 +1,3 @@
 language: node_js
-script: ./node_modules/.bin/harp compile
-deploy:
-  provider: s3
-  access_key_id:
-    secure: HdO0qPeh0J1jHDxky746Hd0Qxmaif/kqnaBR4qSLHiFcK/HlRgrpScPfKR19tVsadR8aHaFeq2Qrfr7JBMzBsKevxYB9y3YP7SCQ+/53EGs+lc5asWJt6hB94QhWSTnbsz//1xifvaJh30BCjxw5f/SGVzMY7WUYonOfkUy8RfA=
-  secret_access_key:
-    secure: aFf6SNc9vQvCv3500vMihpoAkvDO3qbh05f2pqY7LKoqdJPztH1f+FOqewAbgVLMkNRzhFk77hZHbeQ9+XsL/4BAP+SCeT39J+vR9MM8hvq47YapUqgoyVbyEPtsYxHs7r60QWvhnz1uk4ILeHNrQ3SXL9U4K1uLhxjeS8QTE6o=
-  bucket: gee.io
-  skip_cleanup: true
-  local-dir: www
+script: ./node_modules/.bin/mocha
+
