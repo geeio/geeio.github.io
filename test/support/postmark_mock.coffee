@@ -7,14 +7,12 @@ guid = ->
 
 
 PostmarkMock =
-  start: ->
-    @messages = []
-
+  start: (cb) ->
     nock('https://api.postmarkapp.com')
       .post('/email')
       .reply 200, (uri, body) ->
         req = JSON.parse(body)
-        PostmarkMock.messages.push req
+        cb(req) if cb
 
         JSON.stringify
           ErrorCode: 0

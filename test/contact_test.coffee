@@ -14,12 +14,14 @@ describe 'Contact', ->
       what: 'Stuff'
       budget: '1000'
 
-    it 'should send stuff', (done) ->
-      postmark = PostmarkMock.start()
+    it 'should send an email via postmark.', (done) ->
+      data = data()
+      postmark = PostmarkMock.start (req) ->
+        req.to.should.eq data.email
 
       req(app)
         .post('/contact')
-        .send(data())
+        .send(data)
         .expect('Content-Type', /json/)
         .expect 200, ->
           postmark.done()
