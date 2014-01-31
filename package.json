@@ -24,7 +24,7 @@
     "coffee-script": "~1.6.3",
     "postmark": "~0.2.0",
     "email-templates": "~0.1.1",
-    "trebuchet": "~1.1.0",
+    "trebuchet": "~1.1.0"
   },
   "subdomain": "gee",
   "engines": {

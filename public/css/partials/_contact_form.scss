@@ -1,7 +1,17 @@
 .contact {
-  width: 600px;
+  width: 95%;
+  max-width: 600px;
   margin: auto;
 }
+
+.home-letter {
+  font-family: "bd-jupiter-stencil";
+  font-size: 40px;
+  padding: 10px 14px;
+  position: absolute;
+  color: white;
+}
+
 .hire-body {
   $bk-color: $base-accent-color;
 
@@ -37,7 +47,14 @@
     }
   }
 
-  body > footer {
+  button {
+    float: right;
+    padding: ($base-line-height / 2) 40px;
+    outline: 0;
+
+  }
+
+  footer > a {
     color: white;
   }
 

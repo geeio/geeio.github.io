@@ -16,8 +16,6 @@ class Contact
     , (e, s) ->
       cb(null, params)
 
-
-
 module.exports = feathers()
   .use('contact', new Contact())
   .listen(process.env.port || 9999)
