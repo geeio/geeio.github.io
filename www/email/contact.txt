@@ -1,0 +1,8 @@
+Hi, George Erickson
+Thanks for picking gee.io, I will be replying shortly with regard to the following proposal.
+
+Name: {{name}}
+Email: {{email}}
+Phone: {{phone}}
+Description: {{what}}
+Budget: {{budget}}
