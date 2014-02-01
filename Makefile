@@ -7,5 +7,5 @@ deploy:
 	harp compile
 	git add www
 	git commit -am 'Release'
-	git subtree push --force --prefix www gh master
+	git push gh `git subtree split --prefix www master`:master
 
