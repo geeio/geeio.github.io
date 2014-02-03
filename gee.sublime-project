@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/src/gee.io",
+      "folder_exclude_patterns": ["components", "node_modules", "www"]
+		}
+	]
+}
