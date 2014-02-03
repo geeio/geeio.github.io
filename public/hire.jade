@@ -1,26 +1,30 @@
 a(href='/').home-letter g
 
 h3.page-title Hire gee.io
-.contact
-  form
-    .input
+.contact(ng-controller="ContactCtrl")
+  form(name='hf', novalidate, ng-submit='submit_hire()')
+    .input.error
       i.ion-person
-      input(type='text', required, placeholder='What is your name?')
+      input(type='text', required, placeholder='What is your name?', ng-model='data.name', name='name')
+      ul.error-block
+        li(ng-show='hf.name.$error.required') Name is required.
 
-    .input
+    .input(ng-class='{ error: hf.name.$invalid && hf.name.$dirty }')
       i.ion-email
-      input(type='email', required, placeholder='What is your email address?')
+      input(type='email', required, placeholder='What is your email address?', ng-model='email')
+      div(ng-show='hf.name.$dirty && !hf.name.$valid').error-block
+        span(ng-show='hf.name.$error.required') Your name is required.
 
     .input
       i.ion-ios7-telephone
-      input(type='tel', required, placeholder='What is your phone number?')
+      input(type='tel', required, placeholder='What is your phone number?', ng-model='phone')
 
     .input
       i.ion-help
-      textarea(required, placeholder='What do you want to hire me for?')
+      textarea(required, placeholder='What do you want to hire me for?', ng-model='what')
 
     .input
       i.ion-pricetag
-      input(type='text', required, placeholder='What is your budget?')
+      input(type='text', required, placeholder='What is your budget?', ng-model='budget')
 
     button Submit

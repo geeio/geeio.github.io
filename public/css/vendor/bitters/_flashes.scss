@@ -18,18 +18,18 @@
   }
 }
 
-.error, #flash_failure {
+.flash-error, #flash_failure {
   @extend %flash;
   @include flash-color($error-color);
 }
 
-.notice, #flash_notice {
+.flash-notice, #flash_notice {
   @extend %flash;
   @include flash-color($notice-color);
 }
 
 
-.success, #flash_success {
+.flash-success, #flash_success {
   @extend %flash;
   @include flash-color($success-color);
 }
