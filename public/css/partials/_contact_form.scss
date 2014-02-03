@@ -65,7 +65,7 @@
 
 .input {
   position: relative;
-  i {
+  > i {
     font-size: 1.5em;
     position: absolute;
     left: -25px;
@@ -76,15 +76,98 @@
     display: none;
   }
 }
+
+@mixin arrow($direction, $color, $size) {
+  $transparent: $size solid transparent;
+  $sizeborder: $size solid $color;
+  display: block;
+  height: 0;
+  width: 0;
+  @if $direction == "top" {
+    border: {
+      left: $transparent;
+      right: $transparent;
+      bottom: $sizeborder;
+    };
+  }
+  @else if $direction == "right" {
+    border: {
+      top: $transparent;
+      bottom: $transparent;
+      left: $sizeborder;
+    };
+  }
+  @else if $direction == "bottom" {
+    border: {
+      top: $sizeborder;
+      right: $transparent;
+      left: $transparent;
+    };
+  }
+  @else if $direction == "left" {
+    border: {
+      top: $transparent;
+      right: $sizeborder;
+      bottom: $transparent;
+    };
+  }
+  @else if $direction == "top-right" {
+    border: {
+      top: $sizeborder;
+      right: $transparent;
+    };
+  }
+  @else if $direction == "top-left" {
+    border: {
+      top: $sizeborder;
+      left: $transparent;
+    };
+  }
+  @else if $direction == "bottom-right" {
+    border: {
+      bottom: $sizeborder;
+      right: $transparent;
+    };
+  }
+  @else if $direction == "bottom-left" {
+    border: {
+      bottom: $sizeborder;
+      left: $transparent;
+    };
+  }
+}
+
+
 .input.error {
   textarea, #{$all-text-inputs} {
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
   .error-block {
-    display: block;
-    @extend %flash;
-    @include flash-color($error-color);
-    padding: $base-line-height / 5 $base-line-height / 2;
+    position: relative;
+    right: 0;
+    display: inline-block;
+    border-radius: 3px;
+    box-shadow:1px 1px 10px 0 #ccc;
+    background:#fff;
+    color: $base-font-color;
     margin-bottom: $base-line-height / 2;
+    padding: $base-line-height / 5;
+    span {
+      vertical-align: middle;
+    }
+
+    i {
+      -webkit-font-smoothing: antialiased;
+      color: $light-red;
+      margin-right: 4px;
+      font-size: 22px;
+      vertical-align: middle;
+    }
+  }
+  .arrow {
+    position: absolute;
+    content: '';
+    top: -14px;
+    @include triangle(15px, white, up);
   }
 }

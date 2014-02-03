@@ -12,7 +12,9 @@ mixin input(opts)
       input(type=type, required, placeholder=attributes.placeholder, ng-model='data.#{opts.name}', name='#{opts.name}')
 
     .error-block
-      span(ng-show='hf.#{opts.name}.$error.required') Your #{opts.name} is required
+      .arrow
+      i.ion-ios7-information
+      span(ng-show='hf.#{opts.name}.$error.required') Please fill out this field.
       span(ng-show='hf.#{opts.name}.$error.email') A valid email is required.
 
 h3.page-title Hire gee.io
