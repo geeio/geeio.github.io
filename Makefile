@@ -1,4 +1,8 @@
-.PHONY: deploy
+.PHONY: deploy deploy-api
+
+deploy-api:
+	jitsu deploy -c
+	rm lib/server.js
 
 setup:
 	git remote add gh git@github.com:geeio/geeio.github.io.git

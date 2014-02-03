@@ -1,12 +1,12 @@
 {
   "name": "gee.io",
-  "version": "0.0.0-1",
+  "version": "0.0.0-3",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "",
-    "predeploy": "./node_modules/.bin/coffee -cb app/",
-    "start": "app/index.js"
+    "predeploy": "./node_modules/.bin/coffee -cb lib/",
+    "start": "lib/server.js"
   },
   "repository": {
     "type": "git",
