@@ -13,5 +13,7 @@ deploy-static:
 	git commit -am 'Release'
 	git push gh `git subtree split --prefix www master`:master --force
 
+icons:
+	grep -RhEo 'ion-[a-zA-Z\-]*' public/ | sort | uniq
 
 deploy: deploy-api deploy-static
