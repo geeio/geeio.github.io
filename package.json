@@ -19,8 +19,9 @@
   },
   "homepage": "https://github.com/geeio/gee.io",
   "dependencies": {
-    "feathers": "~0.2.0",
-    "trebuchet": "~1.1.0"
+    "feathers": "~0.3.0",
+    "trebuchet": "~1.1.0",
+    "harp": ""
   },
   "subdomain": "gee",
   "engines": {

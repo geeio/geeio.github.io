@@ -20,7 +20,7 @@ describe 'Contact', ->
         req.to.should.eq data.email
 
       req(app)
-        .post('/contact')
+        .post('/api/contact')
         .send(data)
         .expect('Content-Type', /json/)
         .expect 200, ->

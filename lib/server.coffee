@@ -1,8 +1,10 @@
 feathers = require 'feathers'
 trebuchet = require("trebuchet")(process.env.POSTMARK_KEY)
+harp = require "harp"
 
 class Contact
   create: (data, params, cb) ->
+    console.log data
     trebuchet.fling
       params:
         from: 'contact@gee.io'
@@ -17,5 +19,7 @@ class Contact
       cb(null, params)
 
 module.exports = feathers()
-  .use('contact', new Contact())
+  .use('/api/contact', new Contact())
+  .use(feathers.static(__dirname))
+  .use(harp.mount(__dirname + "/../public"))
   .listen(process.env.port || 9999)
