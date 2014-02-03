@@ -1,5 +1,5 @@
 feathers = require 'feathers'
-trebuchet = require("trebuchet")("847f5188-9138-4a38-9690-adb2491870ef")
+trebuchet = require("trebuchet")(process.env.POSTMARK_KEY)
 
 class Contact
   create: (data, params, cb) ->
