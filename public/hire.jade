@@ -1,30 +1,28 @@
 a(href='/').home-letter g
 
+mixin input(opts)
+  - var type = attributes.type
+  .input(ng-class='{ error: hf.#{opts.name}.$invalid && (hf.#{opts.name}.$dirty || hf.submitted) }')
+    - if (opts.icon)
+      i(class='#{opts.icon}')
+
+    - if (attributes.type == 'textarea')
+      textarea(required, placeholder=attributes.placeholder, ng-model='data.#{opts.name}', name='#{opts.name}')
+    - else
+      input(type=type, required, placeholder=attributes.placeholder, ng-model='data.#{opts.name}', name='#{opts.name}')
+
+    .error-block
+      span(ng-show='hf.#{opts.name}.$error.required') Your #{opts.name} is required
+      span(ng-show='hf.#{opts.name}.$error.email') A valid email is required.
+
 h3.page-title Hire gee.io
 .contact(ng-controller="ContactCtrl")
-  form(name='hf', novalidate, ng-submit='submit_hire()')
-    .input.error
-      i.ion-person
-      input(type='text', required, placeholder='What is your name?', ng-model='data.name', name='name')
-      ul.error-block
-        li(ng-show='hf.name.$error.required') Name is required.
+  form(name='hf', ng-submit='submit_hire()', novalidate)
+    +input({name: 'name', icon: 'ion-person'})(type='text', placeholder='What is your name?')
+    +input({name: 'email', icon: 'ion-email'})(type='email', placeholder='What is your email address?')
+    +input({name: 'phone', icon: 'ion-ios7-telephone'})(type='tel', placeholder='What is your phone number?')
+    +input({name: 'what', icon: 'ion-help'})(type='textarea', placeholder='What do you want to hire me for?')
+    +input({name: 'budget', icon: 'ion-pricetag'})(type='text', placeholder='What is your budget?')
 
-    .input(ng-class='{ error: hf.name.$invalid && hf.name.$dirty }')
-      i.ion-email
-      input(type='email', required, placeholder='What is your email address?', ng-model='email')
-      div(ng-show='hf.name.$dirty && !hf.name.$valid').error-block
-        span(ng-show='hf.name.$error.required') Your name is required.
-
-    .input
-      i.ion-ios7-telephone
-      input(type='tel', required, placeholder='What is your phone number?', ng-model='phone')
-
-    .input
-      i.ion-help
-      textarea(required, placeholder='What do you want to hire me for?', ng-model='what')
-
-    .input
-      i.ion-pricetag
-      input(type='text', required, placeholder='What is your budget?', ng-model='budget')
 
     button Submit

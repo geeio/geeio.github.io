@@ -77,14 +77,14 @@
   }
 }
 .input.error {
-  #{$all-text-inputs} {
-    margin-bottom: 0;
-  }
-  i {
-    color: $light-red;
+  textarea, #{$all-text-inputs} {
+    margin-bottom: 4px;
   }
   .error-block {
     display: block;
+    @extend %flash;
+    @include flash-color($error-color);
+    padding: $base-line-height / 5 $base-line-height / 2;
     margin-bottom: $base-line-height / 2;
   }
 }
