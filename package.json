@@ -1,6 +1,6 @@
 {
   "name": "gee.io",
-  "version": "0.0.0-3",
+  "version": "0.0.0-5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,9 @@
     "harp": ""
   },
   "subdomain": "gee",
+  "domains": [
+    "api.gee.io"
+  ],
   "engines": {
     "node": "0.10.x"
   },

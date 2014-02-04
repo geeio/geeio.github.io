@@ -20,6 +20,5 @@ class Contact
 
 module.exports = feathers()
   .use('/api/contact', new Contact())
-  .use(feathers.static(__dirname))
   .use(harp.mount(__dirname + "/../public"))
   .listen(process.env.port || 9999)
