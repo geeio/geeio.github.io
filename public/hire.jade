@@ -2,7 +2,7 @@ a(href='/').home-letter g
 
 mixin input(opts)
   - var type = attributes.type
-  .input(ng-class='{ error: hf.#{opts.name}.$invalid && (hf.#{opts.name}.$dirty || hf.submitted) }')
+  .input(ng-class='{ error: hf.#{opts.name}.$invalid && (hf.#{opts.name}.$dirty || hf.submitted) }', field=opts.name)
     - if (opts.icon)
       i(class='#{opts.icon}')
 
@@ -19,12 +19,15 @@ mixin input(opts)
 
 h3.page-title Hire gee.io
 .contact(ng-controller="ContactCtrl")
-  form(name='hf', ng-submit='submit_hire()', novalidate)
-    +input({name: 'name', icon: 'ion-person'})(type='text', placeholder='What is your name?')
-    +input({name: 'email', icon: 'ion-email'})(type='email', placeholder='What is your email address?')
-    +input({name: 'phone', icon: 'ion-ios7-telephone'})(type='tel', placeholder='What is your phone number?')
-    +input({name: 'what', icon: 'ion-help'})(type='textarea', placeholder='What do you want to hire me for?')
-    +input({name: 'budget', icon: 'ion-pricetag'})(type='text', placeholder='What is your budget?')
-
-
-    button Submit
+  div(ng-switch='state')
+    div(ng-switch-when='complete')
+    div(ng-switch-default)
+      form(name='hf', ng-submit='submit_hire()', novalidate)
+        +input({name: 'name', icon: 'ion-person'})(type='text', placeholder='What is your name?')
+        +input({name: 'email', icon: 'ion-email'})(type='email', placeholder='What is your email address?')
+        +input({name: 'phone', icon: 'ion-ios7-telephone'})(type='tel', placeholder='What is your phone number?')
+        +input({name: 'what', icon: 'ion-help'})(type='textarea', placeholder='What do you want to hire me for?')
+        +input({name: 'budget', icon: 'ion-pricetag'})(type='text', placeholder='What is your budget?')
+        button
+          i.ion-loading-d
+          | Submit

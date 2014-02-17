@@ -4,7 +4,7 @@ harp = require "harp"
 
 class Contact
   create: (data, params, cb) ->
-    console.log data
+    console.log JSON.stringify(data)
     trebuchet.fling
       params:
         from: 'contact@gee.io'
@@ -16,7 +16,8 @@ class Contact
       css: __dirname + '/../public/email/ink.css'
       data: data
     , (e, s) ->
-      cb(null, params)
+      cb(null, data)
+
 
 module.exports = feathers()
   .use('/api/contact', new Contact())

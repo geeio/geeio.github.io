@@ -1,12 +1,11 @@
 {
   "name": "gee.io",
-  "version": "0.0.0-5",
+  "version": "0.0.0-10",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "",
-    "predeploy": "./node_modules/.bin/coffee -cb lib/",
-    "start": "lib/server.js"
+    "start": "./node_modules/.bin/coffee lib/server.coffee"
   },
   "repository": {
     "type": "git",
@@ -21,11 +20,13 @@
   "dependencies": {
     "feathers": "~0.3.0",
     "trebuchet": "~1.1.0",
+    "coffee-script": "1.7.1",
     "harp": ""
   },
   "subdomain": "gee",
   "domains": [
-    "api.gee.io"
+    "gee.io",
+    "*.gee.io"
   ],
   "engines": {
     "node": "0.10.x"
@@ -35,6 +36,6 @@
     "supertest": "~0.8.2",
     "nock": "~0.27.1",
     "mocha": "",
-    "coffee-script": "~1.6.3"
+    "protractor": "~0.17.0"
   }
 }
