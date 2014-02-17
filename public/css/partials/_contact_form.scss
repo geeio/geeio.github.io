@@ -5,18 +5,17 @@
   form {
     margin-left: 25px;
   }
+
+
 }
 
-.home-letter {
-  font-family: "bd-jupiter-stencil";
-  font-size: 40px;
-  padding: 10px 14px;
-  position: absolute;
-  color: white;
-}
+
 
 .hire-body {
   $bk-color: $base-accent-color;
+  .home-letter {
+    color: white;
+  }
 
   background-color: $bk-color;
   h1, h2, h3, h4, i { color: white; }
@@ -50,7 +49,7 @@
     }
   }
 
-  button {
+  button, input[type=submit] {
     float: right;
     padding: ($base-line-height / 2) 40px;
     outline: 0;

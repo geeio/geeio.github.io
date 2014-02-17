@@ -2,32 +2,27 @@ a(href='/').home-letter g
 
 mixin input(opts)
   - var type = attributes.type
-  .input(ng-class='{ error: hf.#{opts.name}.$invalid && (hf.#{opts.name}.$dirty || hf.submitted) }', field=opts.name)
+  .input(field=opts.name)
     - if (opts.icon)
       i(class='#{opts.icon}')
 
     - if (attributes.type == 'textarea')
-      textarea(required, placeholder=attributes.placeholder, ng-model='data.#{opts.name}', name='#{opts.name}')
+      textarea(required, placeholder=attributes.placeholder, name='#{opts.name}')
     - else
-      input(type=type, required, placeholder=attributes.placeholder, ng-model='data.#{opts.name}', name='#{opts.name}')
-
-    .error-block
-      .arrow
-      i.ion-ios7-information
-      span(ng-show='hf.#{opts.name}.$error.required') Please fill out this field.
-      span(ng-show='hf.#{opts.name}.$error.email') A valid email is required.
+      input(type=type, required, placeholder=attributes.placeholder, name='#{opts.name}')
 
 h3.page-title Hire gee.io
-.contact(ng-controller="ContactCtrl")
-  div(ng-switch='state')
-    div(ng-switch-when='complete')
-    div(ng-switch-default)
-      form(name='hf', ng-submit='submit_hire()', novalidate)
-        +input({name: 'name', icon: 'ion-person'})(type='text', placeholder='What is your name?')
-        +input({name: 'email', icon: 'ion-email'})(type='email', placeholder='What is your email address?')
-        +input({name: 'phone', icon: 'ion-ios7-telephone'})(type='tel', placeholder='What is your phone number?')
-        +input({name: 'what', icon: 'ion-help'})(type='textarea', placeholder='What do you want to hire me for?')
-        +input({name: 'budget', icon: 'ion-pricetag'})(type='text', placeholder='What is your budget?')
-        button
-          i.ion-loading-d
-          | Submit
+.contact
+  form(accept-charset='UTF-8', autocomplete='off', enctype='multipart/form-data', method='post', novalidate='novalidate', action='https://geeio.wufoo.com/forms/mw0prvd0td06vo/#public')
+    input(type='hidden', name='idstamp', value='gqxF27AqWsa9w+V3yoz9Nov/BP8DG6Mh7XbdKEYai8w=')
+
+    +input({name: 'Field1', icon: 'ion-person'})(type='text', placeholder='What is your name?')
+    +input({name: 'Field2', icon: 'ion-email'})(type='email', placeholder='What is your email address?')
+    +input({name: 'Field5', icon: 'ion-ios7-telephone'})(type='tel', placeholder='What is your phone number?')
+    +input({name: 'Field6', icon: 'ion-help'})(type='textarea', placeholder='What do you want to hire me for?')
+    +input({name: 'Field8', icon: 'ion-pricetag'})(type='text', placeholder='What is your budget?')
+
+    input(name='saveForm', type='submit', value='Submit')
+
+
+
